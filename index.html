@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlowBiz Exports Pvt. Ltd.</title>
+<style>
+:root{--navy:#102b46;--teal:#2a9d8f;--ink:#243442;--muted:#657786;--pale:#f3f7f9;--line:#dce6eb;--white:#fff}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);line-height:1.6;background:#fff}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{color:#176b87}
+.header{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:17px 5%;background:var(--navy);color:#fff}
+.brand{color:#fff;text-decoration:none;font-weight:800;font-size:1.1rem;letter-spacing:.03em}
+.brand small{display:block;color:#9dd9d4;font-size:.68rem;letter-spacing:.15em}
+.nav{display:flex;gap:8px;flex-wrap:wrap}
+.nav button{color:#eef7f8;background:transparent;border:1px solid #ffffff40;border-radius:7px;padding:9px 12px;font-weight:700}
+.nav button:hover,.nav button.active{background:var(--teal);border-color:var(--teal)}
+.view{display:none}.view.active{display:block}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center;padding:55px 6%;background:linear-gradient(110deg,#f3f8fa,#e7f2f3);min-height:430px}
+.eyebrow{font-size:.75rem;font-weight:800;letter-spacing:.15em;color:var(--teal);text-transform:uppercase}
+h1{font-size:clamp(2.4rem,5vw,4.2rem);line-height:1.1;letter-spacing:-.04em;color:var(--navy);margin:12px 0}
+h1 span{color:var(--teal)}
+.hero p,.muted{color:var(--muted)}
+.hero img{width:100%;height:320px;object-fit:cover;border-radius:18px}
+.button{display:inline-block;background:var(--teal);color:#fff;text-decoration:none;padding:11px 17px;border:0;border-radius:8px;font-weight:700}
+.button.secondary{background:var(--navy)}
+.section{padding:55px 6%}.pale,.pagehero{background:var(--pale)}
+.pagehero{text-align:center;padding:55px 6%}
+.pagehero h1{font-size:clamp(2.3rem,4vw,3.5rem);margin:8px 0}
+.pagehero p{color:var(--muted)}
+.two,.split{display:grid;grid-template-columns:1fr 1fr;gap:38px;align-items:center}
+.split img{width:100%;height:300px;object-fit:cover;border-radius:15px}
+.grid{display:grid;gap:18px}.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card,.product{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;padding:22px;box-shadow:0 8px 24px #102b4609}
+.card{cursor:pointer}.card h3,.product h3{color:var(--navy);margin-top:0}
+.card p,.product p{color:var(--muted)}
+.number{color:var(--teal);font-weight:800}
+.product{padding:0}.product img{width:100%;height:190px;object-fit:contain;padding:12px;background:#f7f9fa}
+.product div{padding:17px}
+.contact-grid .card{cursor:default}
+.auth-area{padding:35px 18px 65px;background:var(--pale)}
+.auth{max-width:520px;margin:auto;padding:27px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#edf3f5;padding:5px;border-radius:9px;margin-bottom:24px}
+.tabs button{border:0;padding:11px;border-radius:7px;font-weight:700;color:var(--muted);background:transparent}
+.tabs button.active{background:var(--navy);color:#fff}
+label{display:block;margin:14px 0 5px;font-weight:700;font-size:.9rem}
+input{width:100%;padding:12px;border:1px solid #ccd9df;border-radius:8px}
+.full{width:100%;margin-top:20px}.hidden{display:none!important}
+.success{color:#18794e;font-weight:700}.error{color:#b42318;font-weight:700}
+footer{background:#0b2034;color:#d5e1e8;padding:24px 6%;text-align:center;font-size:.82rem}
+footer p{margin:4px}
+@media(max-width:850px){.hero,.two,.split{grid-template-columns:1fr}.three{grid-template-columns:repeat(2,minmax(0,1fr))}.hero img{height:250px}}
+@media(max-width:560px){.header{padding:15px 5%}.nav{gap:6px}.nav button{font-size:.78rem;padding:8px}.three{grid-template-columns:1fr}.section{padding:40px 5%}.hero{padding:35px 5%}.hero img{height:210px}}
+</style>
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="#" onclick="showView('home');return false">FLOWBIZ <small>EXPORTS PVT. LTD.</small></a>
+  <nav class="nav" aria-label="Main navigation">
+    <button class="active" data-view="home" onclick="showView('home')">Home</button>
+    <button data-view="about" onclick="showView('about')">About Us</button>
+    <button data-view="products" onclick="showView('products')">Products</button>
+    <button data-view="industries" onclick="showView('industries')">Industries</button>
+    <button data-view="contact" onclick="showView('contact')">Contact Us</button>
+    <button data-view="account" onclick="showView('account')">Registration / Login</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="view active">
+  <section class="hero">
+    <div><p class="eyebrow">Industrial valves • Flow control solutions</p>
+      <h1>Reliable flow.<br><span>Confident performance.</span></h1>
+      <p>Explore industrial valve and flow-control product categories for a wide range of applications.</p>
+      <button class="button" onclick="showView('products')">Explore Products →</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1400&q=85" alt="Industrial facility" onerror="this.style.display='none'">
+  </section>
+  <section class="section two">
+    <div><p class="eyebrow">Welcome to FlowBiz</p><h2>Connecting industry with flow-control solutions</h2></div>
+    <div><p>This college project website presents company information, product categories, industries served, and contact details in a clear format.</p><button class="button secondary" onclick="showView('about')">Learn About Us →</button></div>
+  </section>
+  <section class="section pale">
+    <h2>Explore the website</h2>
+    <div class="grid three">
+      <article class="card" onclick="showView('about')"><h3>About Us</h3><p>Company overview and project context.</p></article>
+      <article class="card" onclick="showView('products')"><h3>Products</h3><p>Browse valve and accessory categories.</p></article>
+      <article class="card" onclick="showView('account')"><h3>Registration / Login</h3><p>Create an account or sign in.</p></article>
+    </div>
+  </section>
+</section>
+
+<section id="about" class="view">
+  <section class="pagehero"><p class="eyebrow">About FlowBiz</p><h1>About Our Company</h1><p>Industrial valves and flow-control products for industrial applications.</p></section>
+  <section class="section split">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85" alt="Office building" onerror="this.style.display='none'">
+    <div><h2>Company overview</h2><p>FlowBiz Exports Pvt. Ltd. is presented in this educational project as an Indian company involved in industrial valves and flow-control products, including valves, strainers and industrial accessories.</p><p>The website helps visitors explore company information, products, industries and contact details.</p><a class="button" href="https://www.flowbizexports.com/" target="_blank" rel="noopener">Official Website</a></div>
+  </section>
+</section>
+
+<section id="products" class="view">
+  <section class="pagehero"><p class="eyebrow">Product range</p><h1>Our Products</h1><p>Explore selected industrial valve and flow-control categories.</p></section>
+  <section class="section"><div class="grid three">
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/ball-valve.jpg" alt="Ball valves"><div><h3>Ball Valves</h3><p>Control the flow of liquids and gases.</p></div></article>
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/butterfly-valve.jpg" alt="Butterfly valves"><div><h3>Butterfly Valves</h3><p>Regulate or stop flow in pipelines.</p></div></article>
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/gate-valve.jpg" alt="Gate valves"><div><h3>Gate Valves</h3><p>Start or stop fluid flow.</p></div></article>
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/globe-valve.jpg" alt="Globe valves"><div><h3>Globe Valves</h3><p>Regulate flow in piping systems.</p></div></article>
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/strainer.jpg" alt="Strainers"><div><h3>Strainers</h3><p>Remove unwanted particles from fluids.</p></div></article>
+    <article class="product"><img src="https://www.flowbizexports.com/wp-content/uploads/2021/07/sight-glass.jpg" alt="Sight glass"><div><h3>Sight Glass</h3><p>Visually monitor fluid inside equipment.</p></div></article>
+  </div><p class="muted">Product images load from online sources and may depend on source availability.</p></section>
+</section>
+
+<section id="industries" class="view">
+  <section class="pagehero"><p class="eyebrow">Applications</p><h1>Industries We Serve</h1><p>Flow-control products are used in many industrial environments.</p></section>
+  <section class="section"><div class="grid three">
+    <article class="card"><span class="number">01</span><h3>Oil &amp; Gas</h3><p>Flow-control applications and industrial systems.</p></article>
+    <article class="card"><span class="number">02</span><h3>Power Generation</h3><p>Flow-control applications and industrial systems.</p></article>
+    <article class="card"><span class="number">03</span><h3>Chemical Processing</h3><p>Flow-control applications and industrial systems.</p></article>
+    <article class="card"><span class="number">04</span><h3>Marine Industry</h3><p>Flow-control applications and industrial systems.</p></article>
+    <article class="card"><span class="number">05</span><h3>Pharmaceuticals</h3><p>Flow-control applications and industrial systems.</p></article>
+    <article class="card"><span class="number">06</span><h3>Water Industry</h3><p>Flow-control applications and industrial systems.</p></article>
+  </div></section>
+</section>
+
+<section id="contact" class="view">
+  <section class="pagehero"><p class="eyebrow">Get in touch</p><h1>Contact Us</h1><p>Contact details supplied for this college project.</p></section>
+  <section class="section grid three contact-grid">
+    <article class="card"><h3>Email</h3><p><a href="mailto:info@flowbizexports.com">info@flowbizexports.com</a></p></article>
+    <article class="card"><h3>Phone</h3><p>+91 8879 358 242</p></article>
+    <article class="card"><h3>Export Office</h3><p>Office No. 123, 1st Floor, A Wing, Sagar Tech Plaza, Sakinaka, Andheri East, Mumbai, Maharashtra 400072.</p></article>
+  </section>
+  <section class="section"><a class="button" href="https://www.flowbizexports.com/Home/Contact" target="_blank" rel="noopener">Official Contact Page</a></section>
+</section>
+
+<section id="account" class="view">
+  <section class="pagehero"><p class="eyebrow">Your FlowBiz account</p><h1>Registration &amp; Login</h1><p>Create an account or log in to continue.</p></section>
+  <section class="auth-area"><div class="auth">
+    <div class="tabs"><button id="regTab" class="active" type="button" onclick="mode(true)">Register</button><button id="logTab" type="button" onclick="mode(false)">Login</button></div>
+    <form id="regForm"><h2>Create account</h2>
+      <label for="regName">Full name</label><input id="regName" name="name" required autocomplete="name">
+      <label for="regEmail">Email address</label><input id="regEmail" name="email" type="email" required autocomplete="email">
+      <label for="regPassword">Password (minimum 8 characters)</label><input id="regPassword" name="password" type="password" minlength="8" required autocomplete="new-password">
+      <button class="button full" type="submit">Create Account</button>
+    </form>
+    <form id="logForm" class="hidden"><h2>Welcome back</h2>
+      <label for="logEmail">Email address</label><input id="logEmail" name="email" type="email" required autocomplete="email">
+      <label for="logPassword">Password</label><input id="logPassword" name="password" type="password" required autocomplete="current-password">
+      <button class="button full" type="submit">Login</button>
+    </form>
+    <p id="msg" role="status" aria-live="polite"></p>
+    <p class="muted">Registration and login require the Java Spring Boot backend and MongoDB to be running.</p>
+  </div></section>
+</section>
+</main>
+<footer><p>© 2026 FlowBiz Exports Pvt. Ltd. | College Project Website</p><p>Company information is presented for educational purposes.</p></footer>
+
+<script>
+const views=[...document.querySelectorAll('.view')];
+function showView(id){
+  views.forEach(v=>v.classList.toggle('active',v.id===id));
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+const rt=document.getElementById('regTab'),lt=document.getElementById('logTab');
+const rf=document.getElementById('regForm'),lf=document.getElementById('logForm'),msg=document.getElementById('msg');
+function mode(reg){
+  rf.classList.toggle('hidden',!reg);lf.classList.toggle('hidden',reg);
+  rt.classList.toggle('active',reg);lt.classList.toggle('active',!reg);
+  msg.textContent='';msg.className='';
+}
+async function send(form,endpoint){
+  msg.textContent='Please wait...';msg.className='';
+  try{
+    const response=await fetch('/api/'+endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(form)))});
+    const data=await response.json();
+    msg.textContent=data.message||'Request completed.';
+    msg.className=response.ok?'success':'error';
+    if(response.ok&&endpoint==='register'){form.reset();mode(false);msg.textContent=data.message||'Registration successful. You can now log in.';msg.className='success';}
+    if(response.ok&&endpoint==='login'){form.reset();}
+  }catch(error){
+    msg.textContent='Cannot reach backend. Start the Java Spring Boot application and check that MongoDB is running.';
+    msg.className='error';
+  }
+}
+rf.addEventListener('submit',e=>{e.preventDefault();send(rf,'register')});
+lf.addEventListener('submit',e=>{e.preventDefault();send(lf,'login')});
+</script>
+</body>
+</html>
